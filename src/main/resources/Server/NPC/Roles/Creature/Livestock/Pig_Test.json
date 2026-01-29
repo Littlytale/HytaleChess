@@ -1,0 +1,21 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Test",
+  "Modify": {
+    "Appearance": "Player",
+    "DropList": "",
+    "MaxHealth": 38,
+    "ViewRange": 15,
+    "WeightIgnore": 10,
+    "MemoriesNameOverride": "Pig",
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pig.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

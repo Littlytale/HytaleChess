@@ -19,7 +19,6 @@ public class ExamplePlugin extends JavaPlugin {
 
         getCommandRegistry().registerCommand(new ExampleCommand());
         getCommandRegistry().registerCommand(new ChessPieceController());
-        getCommandRegistry().registerCommand(new LeashEntity());
     }
 
     @Override
