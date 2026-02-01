@@ -12,6 +12,8 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHa
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.npc.entities.NPCEntity;
+import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
+import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 
@@ -36,20 +38,34 @@ class ChessPieceControl extends SimpleInstantInteraction {
         Ref<EntityStore> playerRef = interactionContext.getOwningEntity();
         UUID playerUUID = playerRef.getStore().getComponent(playerRef, UUIDComponent.getComponentType()).getUuid();
 
-        // Holt sich den Entity ...
+        // Holt sich den TargetEntity ...
         Ref<EntityStore> targetEntityRef = interactionContext.getTargetEntity();
-        // ... oder den Block
+        // ... oder den TargetBlock
         BlockPosition targetBlockPos = interactionContext.getTargetBlock();
 
         // Speichert Entity
-        if (targetEntityRef != null || interactionType.getValue() == InteractionType.Secondary.getValue()) {
-            selectedEntity.put(playerUUID, targetEntityRef);
+        if (targetEntityRef != null ) {
+            if (interactionType.getValue() == InteractionType.Secondary.getValue()) {
 
-            return;
+                selectedEntity.put(playerUUID, targetEntityRef);
+
+                return;
+            } else if (interactionType.getValue() == InteractionType.Primary.getValue()) {
+                Ref<EntityStore> currentEntity = selectedEntity.get(playerUUID);
+                if (!currentEntity.isValid()) {
+                    selectedEntity.remove(playerUUID);
+                    return;
+                }
+                NPCEntity entityComponent = selectedEntity.get(playerUUID).getStore().getComponent(currentEntity, NPCEntity.getComponentType());
+
+                entityComponent.getRole().setMarkedTarget("LockedTarget", targetEntityRef);
+                entityComponent.getRole().getStateSupport().setState(currentEntity, "Combat", null, currentEntity.getStore());
+
+            }
         }
 
-        // Setzt den LeashPoint von Entity auf den Block der angeklickt wurde
-        if (targetBlockPos != null || selectedEntity.get(playerUUID) != null) {
+        // Setzt den LeashPoint vom Entity über den Block der angeklickt wurde
+        if (targetBlockPos != null && selectedEntity.get(playerUUID) != null) {
             Ref<EntityStore> currentEntity = selectedEntity.get(playerUUID);
             if (!currentEntity.isValid()) {
                 selectedEntity.remove(playerUUID);
@@ -58,6 +74,8 @@ class ChessPieceControl extends SimpleInstantInteraction {
             NPCEntity entityComponent = selectedEntity.get(playerUUID).getStore().getComponent(currentEntity, NPCEntity.getComponentType());
 
             entityComponent.setLeashPoint(new Vector3d(targetBlockPos.x + 0.5, targetBlockPos.y, targetBlockPos.z + 0.5));
+
+            entityComponent.getRole().getStateSupport().setState(selectedEntity.get(playerUUID), "ReturnHome", null, selectedEntity.get(playerUUID).getStore());
 
             //selectedEntity.remove(playerUUID);
 
