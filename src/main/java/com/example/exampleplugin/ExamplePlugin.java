@@ -21,7 +21,6 @@ public class ExamplePlugin extends JavaPlugin {
         getLogger().at(Level.INFO).log("ExamplePlugin setup...");
 
         getCommandRegistry().registerCommand(new ExampleCommand());
-        getCommandRegistry().registerCommand(new ChessPieceController());
 
         this.getCodecRegistry(Interaction.CODEC)
                 .register("ChessPieceControl", ChessPieceControl.class, ChessPieceControl.CODEC);
