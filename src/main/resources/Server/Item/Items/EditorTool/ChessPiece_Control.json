@@ -1,0 +1,23 @@
+{
+  "Icon": "Icons/Items/EditorTools/Ruler.png",
+  "Model": "Items/Tools/Brush/Brush.blockymodel",
+  "Texture": "Items/Tools/Brush/Brush_Texture.png",
+  "MaxStack": 1,
+  "PlayerAnimationsId": "Item",
+  "InteractionConfig": {
+    "DebugOutlines": false,
+    "UseDistance": {
+      "Adventure": 128,
+      "Creative": 128
+    },
+    "DisplayOutlines": false,
+    "AllEntities": true
+  },
+  "Set": "AAAA40",
+  "Quality": "Tool",
+  "Interactions": {
+    "Secondary": "ChessPiece_Control",
+    "Primary": "ChessPiece_Control"
+  },
+  "Consumable": false
+}

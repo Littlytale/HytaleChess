@@ -1,0 +1,17 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Chess_Piece",
+  "Modify": {
+    "Appearance": "Skeleton_Pawn",
+    "MaxHealth": 100,
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Pig.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

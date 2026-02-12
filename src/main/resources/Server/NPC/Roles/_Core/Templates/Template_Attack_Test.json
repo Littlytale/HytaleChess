@@ -1,0 +1,1119 @@
+{
+  "Type": "Abstract",
+  "Parameters": {
+    "Appearance": {
+      "Value": "Fox",
+      "Description": "Model to be used."
+    },
+    "WanderRadius": {
+      "Value": 8,
+      "Description": "General wander radius."
+    },
+    "ViewRange": {
+      "Value": 24,
+      "Description": "The range from which the target will be seen. If zero, sight will be disabled."
+    },
+    "ViewSector": {
+      "Value": 120,
+      "Description": "The view sector within which the target needs to be to be seen."
+    },
+    "HearingRange": {
+      "Value": 12,
+      "Description": "The range from which the target will be heard. If zero, hearing will be disabled."
+    },
+    "AbsoluteDetectionRange": {
+      "Value": 4,
+      "Description": "The range at which a target is guaranteed to be detected. If zero, absolute detection will be disabled."
+    },
+    "FleeRange": {
+      "Value": 15,
+      "Description": "How far to try and get away when fleeing."
+    },
+    "ChanceToBeAlertedWhenFlockAlerted": {
+      "Value": 70,
+      "Description": "Percentage chance to engage in combat if another flock member engages a target."
+    },
+    "AlertedRange": {
+      "Value": 28,
+      "Description": "A range within which the target can be seen/sensed when the NPC is alerted to their presence. Should be higher than sense ranges."
+    },
+    "AlertedTime": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How long to wait in an alerted or threatening state before switching to active combat."
+    },
+    "MaintainDistanceWhileAlerted": {
+      "Value": false,
+      "Description": "Whether or not to maintain distance and strafe while in the alerted state."
+    },
+    "AlertedRelativeForwardsSpeed": {
+      "Value": 0.5,
+      "Description": "Relative movement speed when moving forwards or strafing while in the alerted state. Only applies if MaintainDistanceWhileAlerted is true."
+    },
+    "AlertedStrafingDurationRange": {
+      "Value": [
+        1,
+        1
+      ],
+      "Description": "How long to strafe for when in the alerted state. Only applies if MaintainDistanceWhileAlerted is true."
+    },
+    "AlertedStrafingFrequencyRange": {
+      "Value": [
+        2,
+        2
+      ],
+      "Description": "How frequently to strafe when in the alerted state. Only applies if MaintainDistanceWhileAlerted is true."
+    },
+    "FleeIfNotThreatened": {
+      "Value": false,
+      "Description": "Whether to flee while in the alerted state if not threatened after AlertedTime expires."
+    },
+    "ThreatenAnimation": {
+      "Value": "",
+      "Description": "An optional animation to play to threaten the target before initiating combat."
+    },
+    "ThreatenDelayRange": {
+      "Value": [
+        2,
+        4
+      ],
+      "Description": "Delay before the threaten animation is played."
+    },
+    "DropList": {
+      "Value": "Empty",
+      "Description": "Drop Items."
+    },
+    "MaxSpeed": {
+      "Value": 8,
+      "Description": "Maximum walking speed."
+    },
+    "RunThreshold": {
+      "Value": 0.10,
+      "Description": "At what ratio NPC switches to run animation e.g MaxSpeed is 10, at RunThreshold 0.55 NPC will run at speed 5.5."
+    },
+    "Chase": {
+      "Value": true,
+      "Description": "Whether the NPC will chase the target during combat."
+    },
+    "ChaseRelativeSpeed": {
+      "Value": 1,
+      "Description": "Relative chasing speed when pursuing a target."
+    },
+    "CombatMovingRelativeSpeed": {
+      "Value": 0.6,
+      "Description": "Relative speed to use during combat specific movement (e.g. to achieve slower strafing)."
+    },
+    "Attack": {
+      "Value": "Root_NPC_Attack_Melee",
+      "Description": "The attack to use."
+    },
+    "AttackDistance": {
+      "Value": 2.5,
+      "Description": "The distance to attack from."
+    },
+    "DayTimePeriod": {
+      "Value": [
+        6.01,
+        17.99
+      ],
+      "Description": "The hour range considered to be daytime for this NPC."
+    },
+    "DayTimeNapWeight": {
+      "Value": 2,
+      "Description": "Weight used to determine if the NPC should have a short nap during the day. Set to 0 to disable."
+    },
+    "DayTimeNapTimeRange": {
+      "Value": [
+        10,
+        12
+      ],
+      "Description": "How long a daytime nap should last."
+    },
+    "TimidDuringDay": {
+      "Value": false,
+      "Description": "Whether this NPC is a bit more timid during the day."
+    },
+    "AlwaysSleepAtNight": {
+      "Value": true,
+      "Description": "Whether this NPC always sleeps through the whole night."
+    },
+    "NightFlavorAnimation": {
+      "Value": "",
+      "Description": "A flavor animation to play at night. Ignored if null or empty."
+    },
+    "NightFlavorAnimationLength": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How long to play the night flavor animation."
+    },
+    "DayFlavorAnimation": {
+      "Value": "",
+      "Description": "A flavor animation to play during the day. Ignored if null or empty."
+    },
+    "DayFlavorAnimationLength": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How long to play the daytime flavor animation."
+    },
+    "AttitudeGroup": {
+      "Value": "Predators",
+      "Description": "This NPC\u0027s attitude group."
+    },
+    "FlockArray": {
+      "Value": [],
+      "TypeHint": "String",
+      "Description": "Array containing NPCs for this flock type."
+    },
+    "AttackPauseRange": {
+      "Value": [
+        0,
+        0.1
+      ],
+      "Description": "The range for absolute minimum time before an NPC can execute a second attack."
+    },
+    "CombatRelativeTurnSpeed": {
+      "Value": 1.5,
+      "Description": "Modifier that decides turn speed difference in combat."
+    },
+    "CombatBehaviorDistance": {
+      "Value": 5,
+      "Description": "The distance within which to switch from smart chasing to combat-oriented movement behavior."
+    },
+    "CombatAlwaysMovingWeight": {
+      "Value": 10,
+      "Description": "Weight for the combat movement behavior where the npcs will always chharge at you,put 0 to disable."
+    },
+    "CombatDirectWeight": {
+      "Value": 10,
+      "Description": "Weight for the direct combat movement behavior (i.e. just going straight at the target, maintaining a close distance and attacking. Set to 0 to disable."
+    },
+    "CombatStrafeWeight": {
+      "Value": 1,
+      "Description": "Weight for the combat strafing movement behavior. Set to 0 to disable."
+    },
+    "CombatAttackPreDelay": {
+      "Value": [
+        0.1,
+        0.15
+      ],
+      "Description": "The time delay range before the NPC performs an attack, provided it\u0027s in attack range."
+    },
+    "CombatAttackPostDelay": {
+      "Value": [
+        0.1,
+        0.1
+      ],
+      "Description": "The time delay range after the NPC performs an attack, provided it\u0027s in attack range."
+    },
+    "CombatStrafingDurationRange": {
+      "Value": [
+        1,
+        1
+      ],
+      "Description": "How long to strafe for when in the combat strafing movement behavior. Only applies if CombatStrafeWeight is greater than 0."
+    },
+    "CombatStrafingFrequencyRange": {
+      "Value": [
+        1,
+        1
+      ],
+      "Description": "How frequently to strafe when in the combat strafing movement behavior. Only applies if CombatStrafeWeight is greater than 0."
+    },
+    "CombatBackOffAfterAttack": {
+      "Value": false,
+      "Description": "Whether to back off after performing an attack."
+    },
+    "CombatBackOffDistanceRange": {
+      "Value": [
+        4,
+        4
+      ],
+      "Description": "How far to back off after performing an attack. Max should be lower than the CombatBehaviorDistance."
+    },
+    "CombatBackOffDurationRange": {
+      "Value": [
+        2,
+        3
+      ],
+      "Description": "How long to back off for after performing an attack."
+    },
+    "Weapons": {
+      "Value": [],
+      "TypeHint": "String",
+      "Description": "Weapons to equip in hotbar."
+    },
+    "BlockAbility": {
+      "Value": "",
+      "Description": "The interaction to use for blocking when backing away. Set to empty to disable blocking."
+    },
+    "BlockProbability": {
+      "Value": 50,
+      "Description": "The probability this NPC will block when backing away if a BlockAbility is set."
+    },
+    "AdditionalCombatBehaviorMacroElement": {
+      "Value": "Component_Instruction_Null",
+      "Description": "An optional macro element for supplying more bespoke combat movement behavior. Weight for the behavior must be internally defined in the macro element."
+    },
+    "BlockStepDetectionBlockSet": {
+      "Value": "",
+      "Description": "Optional blockset that this NPC will passively detect steps on."
+    },
+    "BlockStepDetectionRange": {
+      "Value": 30,
+      "Description": "Detection range for the block step detection."
+    },
+    "BlockStepDetectionIncludePlayers": {
+      "Value": true,
+      "Description": "Whether block steps from players will be detected."
+    },
+    "BlockStepDetectionIncludeNPCs": {
+      "Value": false,
+      "Description": "Whether block steps from NPCs will be detected."
+    },
+    "BlockStepDetectionRelativeSpeed": {
+      "Value": 0.75,
+      "Description": "The relative motion speed at which the NPC will investigate a stepped block"
+    },
+    "BlockStepDetectionIgnoreGroups": {
+      "Value": [
+        "Self"
+      ],
+      "Description": "The NPC groups whose steps will be ignored."
+    },
+    "MaxHealth": {
+      "Value": 100,
+      "Description": "Max health for the NPC."
+    },
+    "KnockbackScale": {
+      "Value": 0.5,
+      "Description": "Scale factor for knockback."
+    },
+    "ClimbHeight": {
+      "Value": 1,
+      "Description": "The maximum climb height, in blocks."
+    },
+    "MinJumpHeight": {
+      "Value": 0.8,
+      "Description": "The minimum jump height."
+    },
+    "AscentAnimationType": {
+      "Value": "Walk",
+      "Description": "Animation when climbing up. Options: Walk, Jump, Climb, Fly, Idle."
+    },
+    "ClimbSpeedMult": {
+      "Value": 0,
+      "Description": "Climb speed multiplier (const \u002B mult * walkspeed^pow)."
+    },
+    "ClimbSpeedPow": {
+      "Value": 1,
+      "Description": "Climb speed power (const \u002B mult * walkspeed^pow)."
+    },
+    "ClimbSpeedConst": {
+      "Value": 5,
+      "Description": "Climb speed constant (const \u002B mult * walkspeed^pow)."
+    },
+    "DescendSpeedCompensation": {
+      "Value": 0.9,
+      "Description": "Factor to compensate forward speed reduction while moving downwards."
+    },
+    "DescendFlatness": {
+      "Value": 0.7,
+      "Description": "Relative scale how fast NPC moves forward while climbing down."
+    },
+    "DescentSteepness": {
+      "Value": 1.4,
+      "Description": "The relative steepness of the descent."
+    },
+    "DescentBlending": {
+      "Value": 1.8,
+      "Description": "Blending of the descent pattern. 0 is linear, higher values more curved."
+    },
+    "LeashDistance": {
+      "Value": 0.1,
+      "Description": "The range after which an NPC will start to want to return to their spawn point."
+    },
+    "LeashMinPlayerDistance": {
+      "Value": 4,
+      "Description": "The minimum distance from the player before the NPC will be willing to give up on the chase."
+    },
+    "LeashTimer": {
+      "Value": [
+        3,
+        5
+      ],
+      "Description": "How long the NPC must be more than the minimum distance form the player and too far from leash before giving up."
+    },
+    "HardLeashDistance": {
+      "Value": 60,
+      "Description": "An absolute maximum from the the leash position the NPC can go before turning back."
+    },
+    "LeashRelativeSpeed": {
+      "Value": 0.6,
+      "Description": "The relative speed at which the NPC will return to its leash position"
+    },
+    "ConfusedTimeRange": {
+      "Value": [
+        1,
+        2
+      ],
+      "Description": "How long the NPC should act confused for when losing its target before beginning the search. While confused the NPC detection range is lowered."
+    },
+    "SearchTimeRange": {
+      "Value": [
+        5,
+        8
+      ],
+      "Description": "How long the NPC should actively search for its lost target before giving up and going back to idle."
+    },
+    "DisableDamageGroups": {
+      "Value": [
+        "Self"
+      ],
+      "Description": "Groups not to take damage from."
+    },
+    "IsMemory": {
+      "Value": false,
+      "Description": "Defines if the NPC is a memory"
+    },
+    "MemoriesCategory": {
+      "Value": "Mammal",
+      "Description": "Defines the category of the memory"
+    },
+    "MemoriesNameOverride": {
+      "Value": "",
+      "Description": "Overrides the memory name if set"
+    },
+    "BreathesInWater": {
+      "Value": false,
+      "Description": "Whether this NPC can breathe underwater."
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Template.name",
+      "Description": "Translation key for NPC name display"
+    }
+  },
+  "IsMemory": {
+    "Compute": "IsMemory"
+  },
+  "MemoriesCategory": {
+    "Compute": "MemoriesCategory"
+  },
+  "MemoriesNameOverride": {
+    "Compute": "MemoriesNameOverride"
+  },
+  "BreathesInWater": {
+    "Compute": "BreathesInWater"
+  },
+  "Appearance": {
+    "Compute": "Appearance"
+  },
+  "StartState": "Idle",
+  "DropList": {
+    "Compute": "DropList"
+  },
+  "HotbarItems": {
+    "Compute": "Weapons"
+  },
+  "DisableDamageGroups": {
+    "Compute": "DisableDamageGroups"
+  },
+  "DefaultNPCAttitude": "Ignore",
+  "DefaultPlayerAttitude": "Neutral",
+  "AttitudeGroup": {
+    "Compute": "AttitudeGroup"
+  },
+  "FlockSpawnTypes": {
+    "Compute": "FlockArray"
+  },
+  "FlockAllowedNPC": {
+    "Compute": "FlockArray"
+  },
+  "ApplySeparation": false,
+  "SeparationDistance": 2.5,
+  "SeparationWeight": 1.2,
+  "SeparationDistanceTarget": 1.5,
+  "SeparationNearRadiusTarget": 3,
+  "SeparationFarRadiusTarget": 8,
+  "KnockbackScale": {
+    "Compute": "KnockbackScale"
+  },
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": {
+        "Compute": "MaxSpeed"
+      },
+      "Gravity": 15,
+      "RunThreshold": {
+        "Compute": "RunThreshold"
+      },
+      "RunThresholdRange": 0.05,
+      "MaxFallSpeed": 15,
+      "MaxRotationSpeed": 720,
+      "Acceleration": 10,
+      "MaxClimbHeight": {
+        "Compute": "ClimbHeight"
+      },
+      "MinJumpHeight": {
+        "Compute": "MinJumpHeight"
+      },
+      "AscentAnimationType": {
+        "Compute": "AscentAnimationType"
+      },
+      "ClimbSpeedMult": {
+        "Compute": "ClimbSpeedMult"
+      },
+      "ClimbSpeedPow": {
+        "Compute": "ClimbSpeedPow"
+      },
+      "ClimbSpeedConst": {
+        "Compute": "ClimbSpeedConst"
+      },
+      "DescendSpeedCompensation": {
+        "Compute": "DescendSpeedCompensation"
+      },
+      "DescendFlatness": {
+        "Compute": "DescendFlatness"
+      },
+      "DescentSteepness": {
+        "Compute": "DescentSteepness"
+      },
+      "DescentBlending": {
+        "Compute": "DescentBlending"
+      }
+    }
+  ],
+  "StateTransitions": [
+    {
+      "$Comment": "Always clear crouching status when moving from Idle state.",
+      "States": [
+        {
+          "To": [],
+          "From": [
+            "Idle"
+          ]
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "Crouch",
+          "Crouch": false
+        }
+      ]
+    },
+    {
+      "$Comment": "Always clear target and reset instructions when going back to idle.",
+      "States": [
+        {
+          "To": [
+            "Idle"
+          ],
+          "From": []
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "ReleaseTarget"
+        },
+        {
+          "Type": "ResetInstructions"
+        }
+      ]
+    }
+  ],
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "InteractionVars": {
+    "Melee_Damage": {
+      "Interactions": [
+        {
+          "$Comment": "Config for a successful melee hit, default values for Effects and HitShape are not overwritten here, see each NPC_ file",
+          "Parent": "NPC_Attack_Melee_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 10
+            },
+            "RandomPercentageModifier": 0.1
+          }
+        }
+      ]
+    }
+  },
+  "Instructions": [
+    {
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "Idle"
+          },
+          "Instructions": [
+            {
+              "$Comment": "If we\u0027re beyond our soft leash radius for a set period of time, return home.",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Leash",
+                "Range": {
+                  "Compute": "LeashDistance"
+                }
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "Timeout",
+                  "Delay": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "Type": "State",
+                  "State": "ReturnHome"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "Combat"
+          },
+          "Instructions": [
+            {
+              "$Comment": "Always watch the target",
+              "Continue": true,
+              "Sensor": {
+                "Type": "Target",
+                "Range": {
+                  "Compute": "ViewRange"
+                },
+                "Filters": [
+                  {
+                    "Type": "LineOfSight"
+                  }
+                ]
+              },
+              "HeadMotion": {
+                "Type": "Watch"
+              }
+            },
+            {
+              "Sensor": {
+                "Type": "State",
+                "State": ".Chase"
+              },
+              "Instructions": [
+                {
+                  "Sensor": {
+                    "Type": "Target",
+                    "Range": {
+                      "Compute": "AttackDistance"
+                    },
+                    "Filters": [
+                      {
+                        "Type": "LineOfSight"
+                      }
+                    ]
+                  },
+                  "Actions": [
+                    {
+                      "Type": "State",
+                      "State": ".Default"
+                    }
+                  ]
+                },
+                {
+                  "Reference": "Component_Instruction_Soft_Leash",
+                  "Modify": {
+                    "_ExportStates": [
+                      "ReturnHome"
+                    ],
+                    "LeashDistance": {
+                      "Compute": "LeashDistance"
+                    },
+                    "LeashMinPlayerDistance": {
+                      "Compute": "LeashMinPlayerDistance"
+                    },
+                    "LeashTimer": {
+                      "Compute": "LeashTimer"
+                    },
+                    "HardLeashDistance": {
+                      "Compute": "HardLeashDistance"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "Continue": true,
+              "$Comment": "TODO: This Continue causes moving while attacking to maintain distance",
+              "Sensor": {
+                "Type": "Target",
+                "Range": {
+                  "Compute": "AttackDistance"
+                },
+                "Filters": [
+                  {
+                    "Type": "LineOfSight"
+                  }
+                ]
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "$Comment": "TODO: Brief delay before attack so NPC can stop moving. Do we need it?",
+                  "Type": "Timeout",
+                  "Delay": {
+                    "Compute": "CombatAttackPreDelay"
+                  }
+                },
+                {
+                  "Type": "Attack",
+                  "Attack": {
+                    "Compute": "Attack"
+                  },
+                  "AttackPauseRange": {
+                    "Compute": "AttackPauseRange"
+                  }
+                },
+                {
+                  "$Comment": "Brief delay to prevent the NPC potentially strafing/backing away and missing the shot.",
+                  "Type": "Timeout",
+                  "Delay": {
+                    "Compute": "CombatAttackPostDelay"
+                  }
+                },
+                {
+                  "Type": "TimerStart",
+                  "Name": "Combat_Back_Off",
+                  "StartValueRange": {
+                    "Compute": "CombatBackOffDurationRange"
+                  },
+                  "RestartValueRange": {
+                    "Compute": "CombatBackOffDurationRange"
+                  }
+                },
+                {
+                  "Type": "TimerRestart",
+                  "Name": "Combat_Back_Off"
+                }
+              ],
+              "HeadMotion": {
+                "Type": "Aim",
+                "RelativeTurnSpeed": {
+                  "Compute": "CombatRelativeTurnSpeed"
+                }
+              }
+            },
+            {
+              "Continue": true,
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "Target",
+                      "Range": {
+                        "Compute": "AttackDistance"
+                      }
+                    }
+                  },
+                  {
+                    "Type": "Or",
+                    "Sensors": [
+                      {
+                        "Type": "Nav",
+                        "NavStates": [
+                          "Defer"
+                        ],
+                        "ThrottleDuration": 3
+                      },
+                      {
+                        "Type": "Target",
+                        "Range": {
+                          "Compute": "CombatBehaviorDistance"
+                        },
+                        "Filters": [
+                          {
+                            "Type": "Not",
+                            "Filter": {
+                              "Type": "HeightDifference",
+                              "HeightDifference": [
+                                -2,
+                                2
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "Timeout",
+                  "Delay": [
+                    5,
+                    5
+                  ]
+                },
+                {
+                  "Type": "State",
+                  "State": "ReturnHome"
+                }
+              ]
+            },
+            {
+              "Reference": "Component_Instruction_Soft_Leash",
+              "Modify": {
+                "_ExportStates": [
+                  "ReturnHome"
+                ],
+                "LeashDistance": {
+                  "Compute": "LeashDistance"
+                },
+                "LeashMinPlayerDistance": {
+                  "Compute": "LeashMinPlayerDistance"
+                },
+                "LeashTimer": {
+                  "Compute": "LeashTimer"
+                },
+                "HardLeashDistance": {
+                  "Compute": "HardLeashDistance"
+                }
+              }
+            },
+            {
+              "Reference": "Component_Instruction_Combat_Back_Off",
+              "Modify": {
+                "TimerName": "Combat_Back_Off",
+                "CombatBackOffAfterAttack": {
+                  "Compute": "CombatBackOffAfterAttack"
+                },
+                "CombatBackOffDistanceRange": {
+                  "Compute": "CombatBackOffDistanceRange"
+                },
+                "CombatBackOffDurationRange": {
+                  "Compute": "CombatBackOffDurationRange"
+                },
+                "BlockAbility": {
+                  "Compute": "BlockAbility"
+                },
+                "BlockProbability": {
+                  "Compute": "BlockProbability"
+                },
+                "CombatStrafingDurationRange": {
+                  "Compute": "CombatStrafingDurationRange"
+                },
+                "CombatStrafingFrequencyRange": {
+                  "Compute": "CombatStrafingFrequencyRange"
+                },
+                "CombatBehaviorDistance": {
+                  "Compute": "CombatBehaviorDistance"
+                },
+                "CombatMovingRelativeSpeed": {
+                  "Compute": "CombatMovingRelativeSpeed"
+                }
+              }
+            },
+            {
+              "Enabled": {
+                "Compute": "Chase"
+              },
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "Target",
+                    "Range": {
+                      "Compute": "CombatBehaviorDistance"
+                    }
+                  },
+                  {
+                    "Type": "Eval",
+                    "Expression": "blocked"
+                  },
+                  {
+                    "Type": "Not",
+                    "Sensor": {
+                      "Type": "IsBackingAway"
+                    }
+                  }
+                ]
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "Timeout",
+                  "Delay": [
+                    0.5,
+                    0.5
+                  ]
+                },
+                {
+                  "Type": "State",
+                  "State": ".Chase"
+                }
+              ]
+            },
+            {
+              "$Comment": "Execute combat-oriented movement.",
+              "Type": "Random",
+              "ExecuteFor": [
+                5,
+                5
+              ],
+              "Sensor": {
+                "Type": "Target",
+                "Range": {
+                  "Compute": "CombatBehaviorDistance"
+                }
+              },
+              "Instructions": [
+                {
+                  "$Comment": "Strafe around the target while fighting. - this strafes to a very short distance, changing it to maintain \u003E attack distance will lead to the NPC never attacking",
+                  "Enabled": {
+                    "Compute": "CombatStrafeWeight \u003E 0"
+                  },
+                  "Weight": {
+                    "Compute": "CombatStrafeWeight"
+                  },
+                  "Sensor": {
+                    "Type": "Target",
+                    "Range": {
+                      "Compute": "CombatBehaviorDistance"
+                    }
+                  },
+                  "BodyMotion": {
+                    "Type": "MaintainDistance",
+                    "DesiredDistanceRange": {
+                      "Compute": "makeRange(AttackDistance - 1)"
+                    },
+                    "StrafingDurationRange": {
+                      "Compute": "CombatStrafingDurationRange"
+                    },
+                    "StrafingFrequencyRange": {
+                      "Compute": "CombatStrafingFrequencyRange"
+                    },
+                    "RelativeForwardsSpeed": {
+                      "Compute": "CombatMovingRelativeSpeed"
+                    }
+                  },
+                  "HeadMotion": {
+                    "Type": "Watch"
+                  }
+                },
+                {
+                  "$Comment": "Attack the target without strafing.",
+                  "Enabled": {
+                    "Compute": "CombatDirectWeight \u003E 0"
+                  },
+                  "Weight": {
+                    "Compute": "CombatDirectWeight"
+                  },
+                  "Sensor": {
+                    "Type": "Target",
+                    "Range": {
+                      "Compute": "CombatBehaviorDistance"
+                    }
+                  },
+                  "BodyMotion": {
+                    "Type": "MaintainDistance",
+                    "DesiredDistanceRange": {
+                      "Compute": "makeRange(AttackDistance - 1)"
+                    },
+                    "StrafingDurationRange": [
+                      0,
+                      0
+                    ],
+                    "RelativeForwardsSpeed": {
+                      "Compute": "ChaseRelativeSpeed"
+                    }
+                  },
+                  "HeadMotion": {
+                    "Type": "Watch"
+                  }
+                },
+                {
+                  "$Comment": "Attack the target without strafing.",
+                  "Enabled": {
+                    "Compute": "CombatAlwaysMovingWeight \u003E 0"
+                  },
+                  "Weight": {
+                    "Compute": "CombatAlwaysMovingWeight"
+                  },
+                  "Sensor": {
+                    "Type": "Target",
+                    "Range": {
+                      "Compute": "CombatBehaviorDistance"
+                    }
+                  },
+                  "HeadMotion": {
+                    "Type": "Aim",
+                    "RelativeTurnSpeed": {
+                      "Compute": "CombatRelativeTurnSpeed"
+                    }
+                  },
+                  "BodyMotion": {
+                    "Type": "Seek",
+                    "RelativeSpeed": {
+                      "Compute": "ChaseRelativeSpeed"
+                    },
+                    "StopDistance": {
+                      "Compute": "AttackDistance * 0.8"
+                    },
+                    "SlowDownDistance": {
+                      "Compute": "AttackDistance"
+                    }
+                  }
+                },
+                {
+                  "Reference": {
+                    "Compute": "AdditionalCombatBehaviorMacroElement"
+                  },
+                  "Interfaces": [
+                    "Hytale.Instruction.Null",
+                    "Hytale.Instruction.CombatBehavior"
+                  ],
+                  "Modify": {
+                    "_InterfaceParameters": {
+                      "Hytale.Instruction.CombatBehavior": {
+                        "CombatBehaviorDistance": {
+                          "Compute": "CombatBehaviorDistance"
+                        },
+                        "ChaseRelativeSpeed": {
+                          "Compute": "ChaseRelativeSpeed"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "Enabled": {
+                "Compute": "Chase"
+              },
+              "Actions": [
+                {
+                  "Type": "State",
+                  "State": ".Chase"
+                }
+              ]
+            },
+            {
+              "Sensor": {
+                "Type": "Not",
+                "Sensor": {
+                  "Type": "Target",
+                  "Range": {
+                    "Compute": "ViewRange"
+                  }
+                }
+              },
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "Timeout",
+                  "Delay": [
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "Type": "State",
+                  "State": "ReturnHome"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": "ReturnHome"
+          },
+          "Instructions": [
+            {
+              "Sensor": {
+                "Type": "And",
+                "Sensors": [
+                  {
+                    "Type": "Damage",
+                    "Combat": true,
+                    "TargetSlot": "LockedTarget"
+                  },
+                  {
+                    "Enabled": {
+                      "Compute": "AbsoluteDetectionRange \u003E 0"
+                    },
+                    "Type": "Target",
+                    "TargetSlot": "LockedTarget",
+                    "Range": {
+                      "Compute": "AbsoluteDetectionRange"
+                    }
+                  }
+                ]
+              },
+              "Actions": [
+                {
+                  "Type": "State",
+                  "State": "Combat"
+                }
+              ]
+            },
+            {
+              "Sensor": {
+                "Type": "Leash",
+                "Range": {
+                  "Compute": "LeashDistance * 0.3"
+                }
+              },
+              "BodyMotion": {
+                "Type": "Seek",
+                "SlowDownDistance": {
+                  "Compute": "0.1"
+                },
+                "StopDistance": {
+                  "Compute": "0.1"
+                },
+                "RelativeSpeed": {
+                  "Compute": "0.7"
+                },
+                "UsePathfinder": true
+              }
+            },
+            {
+              "Actions": [
+                {
+                  "Type": "SetStat",
+                  "Stat": "Health",
+                  "Value": 1000000
+                },
+                {
+                  "Type": "State",
+                  "State": "Idle"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "NameTranslationKey": {
+    "Compute": "NameTranslationKey"
+  }
+}
