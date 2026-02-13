@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Chess_Piece",
   "Modify": {
-    "Appearance": "Mannequin_Bishop",
+    "Appearance": "Piece_Mannequin_Bishop",
     "MaxHealth": 100,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

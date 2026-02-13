@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Chess_Piece",
   "Modify": {
-    "Appearance": "Skeleton_Knight",
+    "Appearance": "Piece_Skeleton_Knight",
     "MaxHealth": 100,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"

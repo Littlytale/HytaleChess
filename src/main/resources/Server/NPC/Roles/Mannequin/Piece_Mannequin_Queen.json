@@ -2,7 +2,7 @@
   "Type": "Variant",
   "Reference": "Template_Chess_Piece",
   "Modify": {
-    "Appearance": "Mannequin_Queen",
+    "Appearance": "Piece_Mannequin_Queen",
     "MaxHealth": 100,
     "NameTranslationKey": {
       "Compute": "NameTranslationKey"
