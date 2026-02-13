@@ -1,1 +1,13 @@
-items.Example_Block.name=Example Block
+server.npcRoles.Piece_Mannequin_Bishop.name=Bishop
+server.npcRoles.Piece_Mannequin_King.name=King
+server.npcRoles.Piece_Mannequin_Knight.name=Knight
+server.npcRoles.Piece_Mannequin_Pawn.name=Pawn
+server.npcRoles.Piece_Mannequin_Queen.name=Queen
+server.npcRoles.Piece_Mannequin_Rook.name=Rook
+
+server.npcRoles.Piece_Skeleton_Bishop.name=Bishop
+server.npcRoles.Piece_Skeleton_King.name=King
+server.npcRoles.Piece_Skeleton_Knight.name=Knight
+server.npcRoles.Piece_Skeleton_Pawn.name=Pawn
+server.npcRoles.Piece_Skeleton_Queen.name=Queen
+server.npcRoles.Piece_Skeleton_Rook.name=Rook

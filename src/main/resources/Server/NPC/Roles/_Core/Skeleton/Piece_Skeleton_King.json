@@ -10,7 +10,7 @@
   },
   "Parameters": {
     "NameTranslationKey": {
-      "Value": "server.npcRoles.Pig.name",
+      "Value": "server.npcRoles.Piece_Skeleton_King.name",
       "Description": "Translation key for NPC name display"
     }
   }
