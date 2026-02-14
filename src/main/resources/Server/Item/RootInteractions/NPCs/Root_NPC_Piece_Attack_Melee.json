@@ -1,0 +1,10 @@
+{
+  "Interactions": [
+      "NPC_LockedTarget_Attack"
+  ],
+  "Tags": {
+    "Attack": [
+      "Melee"
+    ]
+  }
+}

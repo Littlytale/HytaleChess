@@ -90,7 +90,7 @@
       "Description": "Maximum walking speed."
     },
     "RunThreshold": {
-      "Value": 0.10,
+      "Value": 0.1,
       "Description": "At what ratio NPC switches to run animation e.g MaxSpeed is 10, at RunThreshold 0.55 NPC will run at speed 5.5."
     },
     "Chase": {
@@ -106,11 +106,11 @@
       "Description": "Relative speed to use during combat specific movement (e.g. to achieve slower strafing)."
     },
     "Attack": {
-      "Value": "Root_NPC_Attack_Melee",
+      "Value": "Root_NPC_Piece_Attack_Melee",
       "Description": "The attack to use."
     },
     "AttackDistance": {
-      "Value": 2.5,
+      "Value": 2,
       "Description": "The distance to attack from."
     },
     "DayTimePeriod": {
@@ -163,7 +163,7 @@
     },
     "AttitudeGroup": {
       "Value": "Predators",
-      "Description": "This NPC\u0027s attitude group."
+      "Description": "This NPC's attitude group."
     },
     "FlockArray": {
       "Value": [],
@@ -182,7 +182,7 @@
       "Description": "Modifier that decides turn speed difference in combat."
     },
     "CombatBehaviorDistance": {
-      "Value": 5,
+      "Value": 128,
       "Description": "The distance within which to switch from smart chasing to combat-oriented movement behavior."
     },
     "CombatAlwaysMovingWeight": {
@@ -202,14 +202,14 @@
         0.1,
         0.15
       ],
-      "Description": "The time delay range before the NPC performs an attack, provided it\u0027s in attack range."
+      "Description": "The time delay range before the NPC performs an attack, provided it's in attack range."
     },
     "CombatAttackPostDelay": {
       "Value": [
         0.1,
         0.1
       ],
-      "Description": "The time delay range after the NPC performs an attack, provided it\u0027s in attack range."
+      "Description": "The time delay range after the NPC performs an attack, provided it's in attack range."
     },
     "CombatStrafingDurationRange": {
       "Value": [
@@ -308,15 +308,15 @@
     },
     "ClimbSpeedMult": {
       "Value": 0,
-      "Description": "Climb speed multiplier (const \u002B mult * walkspeed^pow)."
+      "Description": "Climb speed multiplier (const + mult * walkspeed^pow)."
     },
     "ClimbSpeedPow": {
       "Value": 1,
-      "Description": "Climb speed power (const \u002B mult * walkspeed^pow)."
+      "Description": "Climb speed power (const + mult * walkspeed^pow)."
     },
     "ClimbSpeedConst": {
       "Value": 5,
-      "Description": "Climb speed constant (const \u002B mult * walkspeed^pow)."
+      "Description": "Climb speed constant (const + mult * walkspeed^pow)."
     },
     "DescendSpeedCompensation": {
       "Value": 0.9,
@@ -339,13 +339,13 @@
       "Description": "The range after which an NPC will start to want to return to their spawn point."
     },
     "LeashMinPlayerDistance": {
-      "Value": 4,
+      "Value": 16,
       "Description": "The minimum distance from the player before the NPC will be willing to give up on the chase."
     },
     "LeashTimer": {
       "Value": [
-        3,
-        5
+        0.1,
+        0.1
       ],
       "Description": "How long the NPC must be more than the minimum distance form the player and too far from leash before giving up."
     },
@@ -557,7 +557,7 @@
           },
           "Instructions": [
             {
-              "$Comment": "If we\u0027re beyond our soft leash radius for a set period of time, return home.",
+              "$Comment": "If we're beyond our soft leash radius for a set period of time, return home.",
               "Continue": true,
               "Sensor": {
                 "Type": "Leash",
@@ -765,8 +765,8 @@
                 {
                   "Type": "Timeout",
                   "Delay": [
-                    5,
-                    5
+                    1,
+                    1
                   ]
                 },
                 {
@@ -883,9 +883,9 @@
               },
               "Instructions": [
                 {
-                  "$Comment": "Strafe around the target while fighting. - this strafes to a very short distance, changing it to maintain \u003E attack distance will lead to the NPC never attacking",
+                  "$Comment": "Strafe around the target while fighting. - this strafes to a very short distance, changing it to maintain > attack distance will lead to the NPC never attacking",
                   "Enabled": {
-                    "Compute": "CombatStrafeWeight \u003E 0"
+                    "Compute": "CombatStrafeWeight > 0"
                   },
                   "Weight": {
                     "Compute": "CombatStrafeWeight"
@@ -918,7 +918,7 @@
                 {
                   "$Comment": "Attack the target without strafing.",
                   "Enabled": {
-                    "Compute": "CombatDirectWeight \u003E 0"
+                    "Compute": "CombatDirectWeight > 0"
                   },
                   "Weight": {
                     "Compute": "CombatDirectWeight"
@@ -949,7 +949,7 @@
                 {
                   "$Comment": "Attack the target without strafing.",
                   "Enabled": {
-                    "Compute": "CombatAlwaysMovingWeight \u003E 0"
+                    "Compute": "CombatAlwaysMovingWeight > 0"
                   },
                   "Weight": {
                     "Compute": "CombatAlwaysMovingWeight"
@@ -1057,7 +1057,7 @@
                   },
                   {
                     "Enabled": {
-                      "Compute": "AbsoluteDetectionRange \u003E 0"
+                      "Compute": "AbsoluteDetectionRange > 0"
                     },
                     "Type": "Target",
                     "TargetSlot": "LockedTarget",

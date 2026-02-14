@@ -1,0 +1,13 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "Default",
+    "ItemAnimationId": "SwingLeft"
+  },
+  "$Comment": "Warte bis zum Hit-Frame der Animation",
+  "RunTime": 0.2,
+  "Next": {
+    "Type": "chessplugin:lockedtarget_damage",
+    "BaseDamage": 999999
+  }
+}

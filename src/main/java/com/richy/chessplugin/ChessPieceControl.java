@@ -7,6 +7,7 @@ import com.hypixel.hytale.protocol.BlockPosition;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.UUIDComponent;
+import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInstantInteraction;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -21,7 +22,10 @@ import javax.annotation.Nonnull;
 class ChessPieceControl extends SimpleInstantInteraction {
 
     public static final BuilderCodec<ChessPieceControl> CODEC =
-            BuilderCodec.builder(ChessPieceControl.class, ChessPieceControl::new, SimpleInstantInteraction.CODEC).build();
+            BuilderCodec.builder(
+                    ChessPieceControl.class,
+                    ChessPieceControl::new,
+                    SimpleInstantInteraction.CODEC).build();
 
     private static final Map<UUID, Ref<EntityStore>> selectedEntity = new ConcurrentHashMap<>();
 
@@ -47,7 +51,7 @@ class ChessPieceControl extends SimpleInstantInteraction {
                 selectedEntity.put(playerUUID, targetEntityRef);
 
                 return;
-            } else if (interactionType.getValue() == InteractionType.Primary.getValue()) {
+            } else if (interactionType.getValue() == InteractionType.Primary.getValue() && targetEntityRef != selectedEntity.get(playerUUID)) {
                 Ref<EntityStore> currentEntity = selectedEntity.get(playerUUID);
                 if (!currentEntity.isValid()) {
                     selectedEntity.remove(playerUUID);
@@ -58,11 +62,11 @@ class ChessPieceControl extends SimpleInstantInteraction {
                 entityComponent.getRole().setMarkedTarget("LockedTarget", targetEntityRef);
                 entityComponent.getRole().getStateSupport().setState(currentEntity, "Combat", null, currentEntity.getStore());
 
+                Vector3d targetEntityPos = targetEntityRef.getStore().getComponent(targetEntityRef,  TransformComponent.getComponentType()).getPosition();
+                targetEntityPos = new Vector3d(Math.ceil(targetEntityPos.x) - 0.5, targetEntityPos.y, Math.ceil(targetEntityPos.z) - 0.5);
+                entityComponent.setLeashPoint(targetEntityPos);
             }
-        }
-
-        // Setzt den LeashPoint vom Entity über den Block der angeklickt wurde
-        if (targetBlockPos != null && selectedEntity.get(playerUUID) != null) {
+        } else if (targetBlockPos != null && selectedEntity.get(playerUUID) != null) {
             Ref<EntityStore> currentEntity = selectedEntity.get(playerUUID);
             if (!currentEntity.isValid()) {
                 selectedEntity.remove(playerUUID);
