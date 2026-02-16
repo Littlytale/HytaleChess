@@ -11,3 +11,6 @@ server.npcRoles.Piece_Skeleton_Knight.name=Knight
 server.npcRoles.Piece_Skeleton_Pawn.name=Pawn
 server.npcRoles.Piece_Skeleton_Queen.name=Queen
 server.npcRoles.Piece_Skeleton_Rook.name=Rook
+
+server.items.Chess_Staff_Mannequin.name=Mannequin Chess Staff
+server.items.Chess_Staff_Skeleton.name=Skeleton Chess Staff
